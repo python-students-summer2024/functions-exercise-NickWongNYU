@@ -7,7 +7,9 @@ Students are told whether their answer was correct or not.
 import app_functions
 
 
+
 def main():
+    
     """
     Use the functions defined in app_functions.py to make this game work.
 
@@ -23,6 +25,24 @@ def main():
     print("Welcome to the Math App!!!")
     print("")  # line break
     ### write code to complete this function BELOW here ###
+    die_1 =app_functions.roll_die()
+    die_2= app_functions.roll_die()
+
+    question_type=app_functions.get_question_type()
+    app_functions.print_question(die_1, die_2, question_type)
+    user_answer=app_functions.input_answer()
+
+    if user_answer==-1:
+        app_functions.print_error_message()
+    
+    result=app_functions.is_correct_answer(die_1, die_2, question_type, user_answer)
+
+    if result==True:
+        app_functions.print_congratulations(question_type)
+    elif result==False:
+        app_functions.print_correct_answer(die_1, die_2, question_type)
+
+    
 
     ### write code to complete this function ABOVE here ###
     print("")  # line break
